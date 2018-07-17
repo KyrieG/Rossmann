@@ -73,9 +73,9 @@ def build_features(features, data):
 	data.loc[data.PromoInterval == 0, 'PromoInterval'] = ''
 	data['IsPromoMonth'] = 0
 	for interval in data.PromoInterval.unique():
-    if interval != '':
+    	if interval != '':
 	    for month in interval.split(','):
-			data.loc[(data.monthStr == month) & (data.PromoInterval == interval), 'IsPromoMonth'] = 1
+		data.loc[(data.monthStr == month) & (data.PromoInterval == interval), 'IsPromoMonth'] = 1
  
 	return data
  
